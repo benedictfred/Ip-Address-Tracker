@@ -95,13 +95,12 @@ function App() {
 }
 
 function Search({ onHandleAddIp }) {
-  const [formData, setFormData] = useState("");
   const [inputData, setInputData] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
-    if (formData === "") return;
-    onHandleAddIp(formData);
+    if (inputData === "") return;
+    onHandleAddIp(inputData);
     setInputData("");
   }
   return (
@@ -110,8 +109,6 @@ function Search({ onHandleAddIp }) {
       <form
         className="mt-[1rem] flex items-center content-center"
         onSubmit={handleSubmit}
-        onChange={(e) => setFormData(e.target.value)}
-        value={formData}
       >
         <input
           type="text"
